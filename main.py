@@ -11,7 +11,6 @@ THRESHOLD = 1500
 # Initializing PyAudio
 p = pyaudio.PyAudio()
 
-# Ouverture du flux audio
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
@@ -35,7 +34,6 @@ while True:
         mouse.release(pynput.mouse.Button.left)
         noise_detected = False
 
-# Fermeture du flux audio
 stream.stop_stream()
 stream.close()
 p.terminate()
